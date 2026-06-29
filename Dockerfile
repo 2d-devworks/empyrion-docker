@@ -17,6 +17,6 @@ RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.t
 # Get's killed at the end
 RUN ./steamcmd.sh +login anonymous +quit || :
 
-EXPOSE 30000/udp 30001 30002 30003
+EXPOSE 30000 30001 30002 30003
 ADD entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
