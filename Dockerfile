@@ -2,7 +2,6 @@ FROM debian:bookworm-slim
 
 LABEL maintainer="2ddevworks"
 LABEL description="Empyrion: Galactic Survival Dedicated Server"
-LABEL version="1.0.0"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DEDICATED_YML=""

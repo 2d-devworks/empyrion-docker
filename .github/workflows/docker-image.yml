@@ -21,7 +21,7 @@ jobs:
         with:
           images: ${{ vars.DOCKER_USERNAME }}/empyrion-server
           tags: |
-            org.opencontainers.image.version={{label version}}
+            type=semver,pattern={{version}}
             type=raw,value=latest
       - name: Log in to Docker Hub
         uses: docker/login-action@v4
