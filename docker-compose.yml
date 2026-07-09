@@ -1,0 +1,13 @@
+﻿name: empyrion-server
+services:
+  empyrion-server:
+    image: 2ddevworks/empyrion-server:latest
+    container_name: empyrion-server
+# Uncomment the following lines and set the path to your customized config file if you're using one
+#    environment:
+#      - DEDICATED_YML=Z:/empyrion-server/Path/To/Your/dedicated.yaml
+    ports:
+      - "30000-30003:30000-30003/udp"
+    restart: unless-stopped
+    volumes:
+      - ./app-data:/empyrion-server
