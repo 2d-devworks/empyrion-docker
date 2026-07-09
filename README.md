@@ -14,11 +14,11 @@ This Docker image includes WINE and steamcmd, along with an entrypoint script th
     ```
 2. Run the Docker container:
     ```sh
-    docker run -d -p 30000:30000/udp --restart unless-stopped -v $PWD/gamedir:/empyrion-server
+    docker run -d -p 30000:30000/udp --restart unless-stopped -v $PWD/gamedir:/empyrion-server 2ddevworks/docker-server
     ```
    Or if you're running a public server and you want it to appear in the server list in game:
    ```sh
-    docker run -d -p 30000-30003:30000-300003/udp --restart unless-stopped -v $PWD/gamedir:/empyrion-server
+    docker run -d -p 30000-30003:30000-300003/udp --restart unless-stopped -v $PWD/gamedir:/empyrion-server 2ddevworks/docker-server
     ```
    There is also a compose file example if you want to go that route
    
@@ -31,7 +31,7 @@ After starting the server, you can edit the **dedicated.yaml** file located at *
 The **DedicatedServer** folder is symlinked to **/empyrion-server**, allowing you to refer to saves with **Z:/empyrion-server/Saves**. For example, for a save called **The_Game**:
 ```sh
 # Run the container with the specific save
-docker run -d -p 30000:30000/udp --restart unless-stopped -v $PWD/gamedir:/empyrion-server -e "DEDICATED_YML=Z:/empyrion-server/Saves/Games/The_Game/dedicated.yaml"
+docker run -d -p 30000:30000/udp --restart unless-stopped -v $PWD/gamedir:/empyrion-server -e "DEDICATED_YML=Z:/empyrion-server/Saves/Games/The_Game/dedicated.yaml" 2ddevworks/docker-server
 ```
 
 ## Additional Information
